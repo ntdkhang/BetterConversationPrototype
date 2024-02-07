@@ -25,7 +25,7 @@ struct BetterConversationPrototypeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProfileView()
         }
         .modelContainer(sharedModelContainer)
     }
