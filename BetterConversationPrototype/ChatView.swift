@@ -40,11 +40,12 @@ struct ChatBubbleFromMe: View {
             HStack(alignment: .bottom) {
                 HStack {
                     Text(message)
+                        .fontWeight(.semibold)
                 }
                 .padding(12)
                 .frame(alignment: .trailing)
                 .background {
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 20)
                         .foregroundColor(color)
                 }
                 .padding(.leading, 24)
@@ -62,7 +63,7 @@ struct ChatBubbleFromMe: View {
 struct ChatBubbleFromThem: View {
     var message: String
     var color: Color {
-        .gray
+        Color(red: 51 / 255, green: 52 / 255, blue: 53 / 255)
     }
 
     var body: some View {
@@ -75,11 +76,12 @@ struct ChatBubbleFromThem: View {
 
                 HStack {
                     Text(message)
+                        .fontWeight(.semibold)
                 }
                 .padding(12)
                 .frame(alignment: .leading)
                 .background {
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 20)
                         .foregroundColor(color)
                 }
                 .padding(.trailing, 24)
