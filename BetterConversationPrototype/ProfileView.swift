@@ -9,9 +9,15 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
+    var user: UserProfileData
     var body: some View {
-        HStack {
-
+        VStack {
+            Text(user.name)
+            Image("VaiLonLuon")
+                .resizable()
+                .frame(width: 100, height: 100)
         }
+        .frame(maxHeight: .infinity, alignment: .top)
     }
 }
+

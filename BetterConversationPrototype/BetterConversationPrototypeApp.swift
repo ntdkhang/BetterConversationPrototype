@@ -25,7 +25,8 @@ struct BetterConversationPrototypeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ProfileView()
+            MenuView()
+                .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)
     }
