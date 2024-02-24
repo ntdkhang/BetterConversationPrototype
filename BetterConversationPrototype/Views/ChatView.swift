@@ -38,8 +38,10 @@ struct ChatView: View {
                 withAnimation(Animation.easeInOut) {
                     Button {
                         // send message
-                        messagesVM.sendMessage(currentText)
-                        currentText = ""
+                        withAnimation {
+                            messagesVM.sendMessage(currentText)
+                            currentText = ""
+                        }
                     } label: {
                         Image(systemName: "arrow.up.message.fill")
                             .resizable()

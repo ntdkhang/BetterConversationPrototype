@@ -20,4 +20,3 @@ struct ProfileView: View {
         .frame(maxHeight: .infinity, alignment: .top)
     }
 }
-
