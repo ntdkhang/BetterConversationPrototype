@@ -10,14 +10,14 @@ import SwiftUI
 struct ChatView: View {
     var messages: [Message] = exampleConversation
     var body: some View {
-        ScrollView {
+        ScrollView([.vertical]) {
             LazyVStack {
                 ForEach(messages) {
                     ChatBubble(message: $0)
                 }
             }
         }
-        .defaultScrollAnchor(.top)
+        .defaultScrollAnchor(.bottom)
     }
 }
 
