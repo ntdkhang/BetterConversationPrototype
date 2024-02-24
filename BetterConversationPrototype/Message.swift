@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Message {
+    let message: String
+    let sender: User
+    let timeSent: Date
+}
