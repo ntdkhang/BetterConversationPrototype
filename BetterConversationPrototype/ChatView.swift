@@ -8,15 +8,26 @@
 import SwiftUI
 
 struct ChatView: View {
-    var messages: [String] = []
+    var messages: [Message] = exampleConversation
     var body: some View {
         ScrollView {
-            VStack {
-                ChatBubbleFromThem(message: "Vàng bạc mày to nhờ")
-                ChatBubbleFromMe(message: "Cho bố cái địa chỉ")
-                ChatBubbleFromMe(message: "Địt mẹ mày nói ít thôi")
-                ChatBubbleFromThem(message: "Vãi lồn luôn đầu cắt moi")
+            LazyVStack {
+                ForEach(messages) {
+                    ChatBubble(message: $0)
+                }
             }
+        }
+        .defaultScrollAnchor(.top)
+    }
+}
+
+struct ChatBubble: View {
+    var message: Message
+    var body: some View {
+        if message.sender == User.me {
+            ChatBubbleFromMe(message: message.text, imageName: message.sender.imageName)
+        } else {
+            ChatBubbleFromThem(message: message.text, imageName: message.sender.imageName)
         }
     }
 }
@@ -33,6 +44,7 @@ struct AvatarIconView: View {
 
 struct ChatBubbleFromMe: View {
     var message: String
+    var imageName: String
     var color: Color {
         .blue
     }
@@ -53,7 +65,7 @@ struct ChatBubbleFromMe: View {
                 .padding(.leading, 24)
 
                 VStack {
-                    AvatarIconView(imageName: "DauCatMoi")
+                    AvatarIconView(imageName: imageName)
                         .frame(width: 25)
                 }
             }
@@ -64,6 +76,7 @@ struct ChatBubbleFromMe: View {
 
 struct ChatBubbleFromThem: View {
     var message: String
+    var imageName: String
     var color: Color {
         Color(red: 51 / 255, green: 52 / 255, blue: 53 / 255)
     }
@@ -72,10 +85,9 @@ struct ChatBubbleFromThem: View {
         HStack {
             HStack(alignment: .bottom) {
                 VStack {
-                    AvatarIconView(imageName: "VaiLonLuon")
+                    AvatarIconView(imageName: imageName)
                         .frame(width: 25)
                 }
-
                 HStack {
                     Text(message)
                         .fontWeight(.semibold)

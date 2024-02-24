@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User: Identifiable {
+struct User: Identifiable, Equatable {
     let id: UUID
     let name: String
     let DOB: Date
@@ -28,4 +28,8 @@ extension User {
     static var example: User {
         User(id: UUID(), name: "Khang Nguyen", DOB: Date.now, imageName: "VaiLonLuon", interests: .init(arrayLiteral: .career, .romance))
     }
+
+    static var me: User = .init(id: UUID(), name: "Khang Nguyen", DOB: Date.now, imageName: "VaiLonLuon", interests: .init(arrayLiteral: .career, .romance))
+
+    static var them: User = .init(id: UUID(), name: "Sua Buoi", DOB: Date.now, imageName: "DauCatMoi", interests: .init(arrayLiteral: .meditation, .romance))
 }
