@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
-    var user: UserProfileData
+    var user: User
     var body: some View {
         VStack {
             Text(user.name)

@@ -10,11 +10,13 @@ import SwiftUI
 struct ChatView: View {
     var messages: [String] = []
     var body: some View {
-        VStack {
-            ChatBubbleFromThem(message: "Vàng bạc mày to nhờ")
-            ChatBubbleFromMe(message: "Cho bố cái địa chỉ")
-            ChatBubbleFromMe(message: "Địt mẹ mày nói ít thôi")
-            ChatBubbleFromThem(message: "Vãi lồn luôn đầu cắt moi")
+        ScrollView {
+            VStack {
+                ChatBubbleFromThem(message: "Vàng bạc mày to nhờ")
+                ChatBubbleFromMe(message: "Cho bố cái địa chỉ")
+                ChatBubbleFromMe(message: "Địt mẹ mày nói ít thôi")
+                ChatBubbleFromThem(message: "Vãi lồn luôn đầu cắt moi")
+            }
         }
     }
 }
