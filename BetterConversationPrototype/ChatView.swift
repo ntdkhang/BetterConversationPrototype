@@ -8,16 +8,48 @@
 import SwiftUI
 
 struct ChatView: View {
-    var messages: [Message] = exampleConversation
+    @ObservedObject var messagesVM = MessagesViewModel()
+    @State private var currentText: String = ""
     var body: some View {
-        ScrollView([.vertical]) {
-            LazyVStack {
-                ForEach(messages) {
-                    ChatBubble(message: $0)
+        VStack {
+            ScrollView([.vertical]) {
+                LazyVStack {
+                    ForEach(messagesVM.messages) {
+                        ChatBubble(message: $0)
+                    }
+                }
+            }
+            .defaultScrollAnchor(.bottom)
+            textFieldView
+                .padding(4)
+        }
+    }
+
+    @ViewBuilder
+    var textFieldView: some View {
+        HStack {
+            TextField("Type your message", text: $currentText, axis: .vertical)
+                .padding(8)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(.gray.opacity(0.5), lineWidth: 1)
+                }
+            if !currentText.isEmpty {
+                withAnimation(Animation.easeInOut) {
+                    Button {
+                        // send message
+                        messagesVM.sendMessage(currentText)
+                        currentText = ""
+                    } label: {
+                        Image(systemName: "arrow.up.message.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.blue)
+                    }
+                    .frame(height: 30)
                 }
             }
         }
-        .defaultScrollAnchor(.bottom)
     }
 }
 
