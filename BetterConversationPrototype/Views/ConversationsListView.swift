@@ -11,7 +11,9 @@ struct ConversationsListView: View {
     var body: some View {
         List {
             LazyVStack {
-                ForEach(1 ..< 3) {}
+                ForEach(1 ..< 3) { _ in
+                    Text("")
+                }
             }
         }
     }
