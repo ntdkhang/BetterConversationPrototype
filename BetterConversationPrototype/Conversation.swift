@@ -7,12 +7,17 @@
 
 import Foundation
 
-struct Conversation {
+struct Conversation: Identifiable {
+    var id = UUID()
     var partner: User
     var messages: [Message]
 
     var lastMessage: Date? {
         messages.last?.timeSent
+    }
+
+    mutating func sendMessage(_ text: String) {
+        messages.append(Message(text: text, sender: .me))
     }
 }
 

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ChatView: View {
-    @ObservedObject var messagesVM = MessagesViewModel()
-    @State private var currentText: String = ""
+    @State var conversation: Conversation
+    @State private var currentText = ""
     var body: some View {
         VStack {
             ScrollView([.vertical]) {
                 LazyVStack {
-                    ForEach(messagesVM.messages) {
+                    ForEach(conversation.messages) {
                         ChatBubble(message: $0)
                     }
                 }
@@ -39,7 +39,7 @@ struct ChatView: View {
                     Button {
                         // send message
                         withAnimation {
-                            messagesVM.sendMessage(currentText)
+                            conversation.sendMessage(currentText)
                             currentText = ""
                         }
                     } label: {
@@ -137,8 +137,4 @@ struct ChatBubbleFromThem: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-}
-
-#Preview {
-    ChatView()
 }

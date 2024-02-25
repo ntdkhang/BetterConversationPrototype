@@ -13,7 +13,7 @@
 		425585822B6ED7B700B53048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425585812B6ED7B700B53048 /* Assets.xcassets */; };
 		425585852B6ED7B700B53048 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425585842B6ED7B700B53048 /* Preview Assets.xcassets */; };
 		426AF9DA2B8A392A00323B9D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9D92B8A392A00323B9D /* Message.swift */; };
-		426AF9DC2B8A86ED00323B9D /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9DB2B8A86ED00323B9D /* MessagesViewModel.swift */; };
+		426AF9DC2B8A86ED00323B9D /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */; };
 		426AF9DF2B8A9B0800323B9D /* ConversationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9DE2B8A9B0800323B9D /* ConversationsListView.swift */; };
 		426AF9E12B8AA17200323B9D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9E02B8AA17200323B9D /* Conversation.swift */; };
 		42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD12B7419ED00A66282 /* ProfileView.swift */; };
@@ -30,7 +30,7 @@
 		425585812B6ED7B700B53048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		425585842B6ED7B700B53048 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		426AF9D92B8A392A00323B9D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		426AF9DB2B8A86ED00323B9D /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		426AF9DE2B8A9B0800323B9D /* ConversationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListView.swift; sourceTree = "<group>"; };
 		426AF9E02B8AA17200323B9D /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		42DF5DD12B7419ED00A66282 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			children = (
 				4255857B2B6ED7B400B53048 /* BetterConversationPrototypeApp.swift */,
 				426AF9DD2B8A9A3100323B9D /* Views */,
-				426AF9DB2B8A86ED00323B9D /* MessagesViewModel.swift */,
+				426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */,
 				42DF5DD52B7F996F00A66282 /* User.swift */,
 				426AF9E02B8AA17200323B9D /* Conversation.swift */,
 				4255857F2B6ED7B400B53048 /* Item.swift */,
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426AF9DC2B8A86ED00323B9D /* MessagesViewModel.swift in Sources */,
+				426AF9DC2B8A86ED00323B9D /* ConversationsViewModel.swift in Sources */,
 				42DF5DDA2B86445100A66282 /* MenuView.swift in Sources */,
 				42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */,
 				4255857E2B6ED7B400B53048 /* ContentView.swift in Sources */,
