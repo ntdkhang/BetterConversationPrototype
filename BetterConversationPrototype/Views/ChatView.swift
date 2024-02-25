@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ChatView: View {
-    @State var conversation: Conversation
+    @ObservedObject var conversationsVM: ConversationsViewModel
+    var conversation: Conversation
     @State private var currentText = ""
     var body: some View {
         VStack {
@@ -39,7 +40,7 @@ struct ChatView: View {
                     Button {
                         // send message
                         withAnimation {
-                            conversation.sendMessage(currentText)
+                            conversationsVM.sendMessage(currentText, to: conversation)
                             currentText = ""
                         }
                     } label: {

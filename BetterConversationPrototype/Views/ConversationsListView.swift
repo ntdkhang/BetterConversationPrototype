@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ConversationsListView: View {
-    @State var conversations: [Conversation] = [.withDauMoi, .withKhaBanh]
+    @ObservedObject var conversationsVM = ConversationsViewModel()
     var body: some View {
         NavigationStack {
             List {
-                ForEach(conversations) { conversation in
+                ForEach(conversationsVM.conversations) { conversation in
                     NavigationLink {
-                        ChatView(conversation: conversation)
+                        ChatView(conversationsVM: conversationsVM, conversation: conversation)
                     } label: {
                         ConversationRow(partner: conversation.partner, lastMessage: conversation.messages.last)
                     }
