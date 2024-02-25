@@ -31,13 +31,20 @@ struct ConversationRow: View {
         HStack {
             Image(partner.imageName)
                 .resizable()
+                .frame(width: 40, height: 40)
                 .aspectRatio(contentMode: .fit)
-            VStack {
+                .clipShape(Circle())
+            VStack(alignment: .leading) {
                 Text(partner.name)
+                    .bold()
                 Text(lastMessage?.text ?? "")
+                    .font(.footnote.weight(.light))
+                    .lineLimit(1)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             if lastMessage != nil {
                 Text(lastMessage!.timeSent, style: .time)
+                    .font(.footnote)
             }
         }
     }

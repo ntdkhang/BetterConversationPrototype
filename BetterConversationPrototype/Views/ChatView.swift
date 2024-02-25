@@ -37,10 +37,8 @@ struct ChatView: View {
                 }
             if !currentText.isEmpty {
                 Button {
-                    // send message
                     withAnimation {
                         conversationsVM.sendMessage(currentText, to: $conversation)
-                        // conversation.messages.append(Message(text: currentText, sender: .me))
                         currentText = ""
                     }
                 } label: {
