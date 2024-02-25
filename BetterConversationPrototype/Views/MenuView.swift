@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuView: View {
     var body: some View {
         TabView {
-            ChatView()
+            ConversationsListView()
                 .tabItem {
                     Label("Chat", systemImage: "bubble.left.and.text.bubble.right.fill")
                 }
