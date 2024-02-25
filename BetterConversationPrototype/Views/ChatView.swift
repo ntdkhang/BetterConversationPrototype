@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatView: View {
     @ObservedObject var conversationsVM: ConversationsViewModel
-    var conversation: Conversation
+    @State var conversation: Conversation
     @State private var currentText = ""
     var body: some View {
         VStack {
@@ -21,12 +21,12 @@ struct ChatView: View {
                 }
             }
             .defaultScrollAnchor(.bottom)
+
             textFieldView
                 .padding(4)
         }
     }
 
-    @ViewBuilder
     var textFieldView: some View {
         HStack {
             TextField("Type your message", text: $currentText, axis: .vertical)
@@ -36,21 +36,20 @@ struct ChatView: View {
                         .stroke(.gray.opacity(0.5), lineWidth: 1)
                 }
             if !currentText.isEmpty {
-                withAnimation(Animation.easeInOut) {
-                    Button {
-                        // send message
-                        withAnimation {
-                            conversationsVM.sendMessage(currentText, to: conversation)
-                            currentText = ""
-                        }
-                    } label: {
-                        Image(systemName: "arrow.up.message.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(.blue)
+                Button {
+                    // send message
+                    withAnimation {
+                        conversationsVM.sendMessage(currentText, to: $conversation)
+                        // conversation.messages.append(Message(text: currentText, sender: .me))
+                        currentText = ""
                     }
-                    .frame(height: 30)
+                } label: {
+                    Image(systemName: "arrow.up.message.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.blue)
                 }
+                .frame(height: 30)
             }
         }
     }
