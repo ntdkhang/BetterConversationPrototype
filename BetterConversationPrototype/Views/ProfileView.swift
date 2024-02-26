@@ -12,10 +12,14 @@ struct ProfileView: View {
     var user: User
     var body: some View {
         VStack {
-            Text(user.name)
-            Image("VaiLonLuon")
+            Image(user.imageName)
                 .resizable()
+                .clipShape(Circle())
                 .frame(width: 100, height: 100)
+                .padding()
+            Text(user.name)
+                .font(.title2)
+                .bold()
         }
         .frame(maxHeight: .infinity, alignment: .top)
     }

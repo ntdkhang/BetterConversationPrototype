@@ -11,6 +11,7 @@ struct ChatView: View {
     @ObservedObject var conversationsVM: ConversationsViewModel
     @State var conversation: Conversation
     @State private var currentText = ""
+    @State var isPresenting = false
     var body: some View {
         VStack {
             ScrollView([.vertical]) {
@@ -24,6 +25,24 @@ struct ChatView: View {
 
             textFieldView
                 .padding(4)
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Button {
+                    isPresenting.toggle()
+                } label: {
+                    HStack(alignment: .center) {
+                        Text(conversation.partner.name)
+                            .foregroundColor(.primary)
+                        Text(">")
+                            .padding(.leading, -4)
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $isPresenting) {
+            ProfileView(user: conversation.partner)
         }
     }
 
