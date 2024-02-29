@@ -12,16 +12,25 @@ struct ChatView: View {
     @State var conversation: Conversation
     @State private var currentText = ""
     @State var isPresenting = false
+    @State var scroll = false // observe change to scroll to bottom. Will be toggle when press send button
+    @Namespace var scrollID
+
     var body: some View {
         VStack {
-            ScrollView([.vertical]) {
-                LazyVStack {
-                    ForEach(conversation.messages) {
-                        ChatBubble(message: $0)
+            ScrollViewReader { proxy in
+                ScrollView([.vertical]) {
+                    LazyVStack {
+                        ForEach(conversation.messages) {
+                            ChatBubble(message: $0)
+                        }
+                    }
+                    .id(scrollID)
+                    .onChange(of: scroll) {
+                        proxy.scrollTo(scrollID, anchor: .bottom)
                     }
                 }
+                .defaultScrollAnchor(.bottom)
             }
-            .defaultScrollAnchor(.bottom)
 
             textFieldView
                 .padding(4)
@@ -57,6 +66,7 @@ struct ChatView: View {
             if !currentText.isEmpty {
                 Button {
                     withAnimation {
+                        scroll.toggle()
                         conversationsVM.sendMessage(currentText, to: $conversation)
                         currentText = ""
                     }
