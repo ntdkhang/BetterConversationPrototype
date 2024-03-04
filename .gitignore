@@ -1,5 +1,12 @@
 
 .nvim/
+GoogleService-Info.plist
+/sdk
+
+# Generated
+/target
+/site
+
 
 # Xcode
 #
