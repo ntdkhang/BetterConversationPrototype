@@ -16,6 +16,7 @@
 		426AF9DC2B8A86ED00323B9D /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */; };
 		426AF9DF2B8A9B0800323B9D /* ConversationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9DE2B8A9B0800323B9D /* ConversationsListView.swift */; };
 		426AF9E12B8AA17200323B9D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9E02B8AA17200323B9D /* Conversation.swift */; };
+		426AFA0C2B96823600323B9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 426AFA0B2B96823600323B9D /* GoogleService-Info.plist */; };
 		42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD12B7419ED00A66282 /* ProfileView.swift */; };
 		42DF5DD62B7F996F00A66282 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD52B7F996F00A66282 /* User.swift */; };
 		42DF5DD82B86439000A66282 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD72B86439000A66282 /* ChatView.swift */; };
@@ -33,6 +34,7 @@
 		426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		426AF9DE2B8A9B0800323B9D /* ConversationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListView.swift; sourceTree = "<group>"; };
 		426AF9E02B8AA17200323B9D /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		426AFA0B2B96823600323B9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42DF5DD12B7419ED00A66282 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		42DF5DD52B7F996F00A66282 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		42DF5DD72B86439000A66282 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				426AF9E02B8AA17200323B9D /* Conversation.swift */,
 				4255857F2B6ED7B400B53048 /* Item.swift */,
 				426AF9D92B8A392A00323B9D /* Message.swift */,
+				426AFA0B2B96823600323B9D /* GoogleService-Info.plist */,
 				425585812B6ED7B700B53048 /* Assets.xcassets */,
 				425585832B6ED7B700B53048 /* Preview Content */,
 			);
@@ -162,6 +165,7 @@
 			files = (
 				425585852B6ED7B700B53048 /* Preview Assets.xcassets in Resources */,
 				425585822B6ED7B700B53048 /* Assets.xcassets in Resources */,
+				426AFA0C2B96823600323B9D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
