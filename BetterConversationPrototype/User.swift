@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct User: Identifiable, Equatable {
+struct User: Identifiable, Equatable, Codable {
     let id: UUID
     let name: String
     let DOB: Date
     let imageName: String
-    let interests: Set<Interest>
+    let interests: [Interest]
 
-    enum Interest {
+    enum Interest: String, Codable {
         case career
         case romance
         case friendship

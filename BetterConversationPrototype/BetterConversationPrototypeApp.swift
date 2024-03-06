@@ -19,6 +19,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct BetterConversationPrototypeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
             MenuView()
