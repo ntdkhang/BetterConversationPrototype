@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Conversation: Identifiable {
-    var id = UUID()
+struct Conversation: Identifiable, Codable {
+    var id: UUID
     var partner: User
     var messages: [Message]
 
@@ -18,6 +18,12 @@ struct Conversation: Identifiable {
 
     mutating func sendMessage(_ text: String) {
         messages.append(Message(text: text, sender: .me))
+    }
+
+    init(partner: User, messages: [Message]) {
+        id = UUID()
+        self.partner = partner
+        self.messages = messages
     }
 }
 
