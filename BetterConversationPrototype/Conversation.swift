@@ -8,8 +8,8 @@
 import Foundation
 
 struct Conversation: Identifiable, Codable {
-    var id: UUID
-    var partner: User
+    var id: String
+    var members: [User]
     var messages: [Message]
 
     var lastMessage: Date? {
@@ -21,8 +21,14 @@ struct Conversation: Identifiable, Codable {
     }
 
     init(partner: User, messages: [Message]) {
-        id = UUID()
-        self.partner = partner
+        id = UUID().uuidString
+        members = [partner, .me]
+        self.messages = messages
+    }
+
+    init(members: [User], messages: [Message]) {
+        id = UUID().uuidString
+        self.members = members
         self.messages = messages
     }
 }
