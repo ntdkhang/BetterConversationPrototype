@@ -16,6 +16,8 @@
 		426AF9DF2B8A9B0800323B9D /* ConversationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9DE2B8A9B0800323B9D /* ConversationsListView.swift */; };
 		426AF9E12B8AA17200323B9D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426AF9E02B8AA17200323B9D /* Conversation.swift */; };
 		426AFA0F2B96867F00323B9D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 426AFA0E2B96867F00323B9D /* FirebaseAuth */; };
+		427467262BAA049100DB4602 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 427467252BAA049100DB4602 /* FirebaseFirestore */; };
+		427467282BAA049100DB4602 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 427467272BAA049100DB4602 /* FirebaseFirestoreSwift */; };
 		42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD12B7419ED00A66282 /* ProfileView.swift */; };
 		42DF5DD62B7F996F00A66282 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD52B7F996F00A66282 /* User.swift */; };
 		42DF5DD82B86439000A66282 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD72B86439000A66282 /* ChatView.swift */; };
@@ -44,6 +46,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				426AFA0F2B96867F00323B9D /* FirebaseAuth in Frameworks */,
+				427467262BAA049100DB4602 /* FirebaseFirestore in Frameworks */,
+				427467282BAA049100DB4602 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,7 @@
 			children = (
 				4255857A2B6ED7B400B53048 /* BetterConversationPrototype */,
 				425585792B6ED7B400B53048 /* Products */,
+				427467242BAA049100DB4602 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		427467242BAA049100DB4602 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +131,8 @@
 			name = BetterConversationPrototype;
 			packageProductDependencies = (
 				426AFA0E2B96867F00323B9D /* FirebaseAuth */,
+				427467252BAA049100DB4602 /* FirebaseFirestore */,
+				427467272BAA049100DB4602 /* FirebaseFirestoreSwift */,
 			);
 			productName = BetterConversationPrototype;
 			productReference = 425585782B6ED7B400B53048 /* BetterConversationPrototype.app */;
@@ -409,6 +423,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 426AFA0D2B96867F00323B9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		427467252BAA049100DB4602 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426AFA0D2B96867F00323B9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		427467272BAA049100DB4602 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426AFA0D2B96867F00323B9D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -85,7 +85,7 @@ struct ChatView: View {
 struct ChatBubble: View {
     var message: Message
     var body: some View {
-        if message.sender == User.me {
+        if message.sender == User.Khang {
             ChatBubbleFromMe(message: message.text, imageName: message.sender.imageName)
         } else {
             ChatBubbleFromThem(message: message.text, imageName: message.sender.imageName)

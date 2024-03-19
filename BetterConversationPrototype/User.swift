@@ -33,13 +33,15 @@ struct User: Identifiable, Equatable, Codable {
 }
 
 extension User {
+    static var empty = User(name: "", DOB: Date.now, imageName: "", interests: .init())
+
     static var example: User {
         User(name: "Khang Nguyen", DOB: Date.now, imageName: "VaiLonLuon", interests: .init(arrayLiteral: .career, .romance))
     }
 
-    static var me: User = .init(name: "Khang Nguyen", DOB: Date.now, imageName: "VaiLonLuon", interests: .init(arrayLiteral: .career, .romance))
+    static var Khang: User = .init(name: "Khang Nguyen", DOB: Date.now, imageName: "VaiLonLuon", interests: .init(arrayLiteral: .career, .romance))
 
-    static var them: User = .init(name: "Sua Buoi", DOB: Date.now, imageName: "DauCatMoi", interests: .init(arrayLiteral: .meditation, .romance))
+    static var DauMoi: User = .init(name: "Đầu Moi", DOB: Date.now, imageName: "DauCatMoi", interests: .init(arrayLiteral: .meditation, .romance))
 
-    static var KhaBanh: User = .init(name: "Kha Banh", DOB: Date.now, imageName: "KhaBanh", interests: .init(arrayLiteral: .family, .friendship))
+    static var KhaBanh: User = .init(name: "Khá Bảnh", DOB: Date.now, imageName: "KhaBanh", interests: .init(arrayLiteral: .family, .friendship))
 }
