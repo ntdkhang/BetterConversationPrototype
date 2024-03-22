@@ -8,8 +8,12 @@
 import Foundation
 
 struct Conversation: Identifiable, Codable {
-    var id: String
-    var members: [User]
+    public let id: String
+    public let members: [User]
+    public let isGroup: Bool
+    public let imageURL: URL?
+    public let chatName: String
+
     var messages: [Message]
 
     var lastMessage: Date? {
@@ -28,12 +32,18 @@ struct Conversation: Identifiable, Codable {
         id = UUID().uuidString
         members = [partner, .Khang]
         self.messages = messages
+        isGroup = false
+        chatName = partner.name
+        imageURL = nil
     }
 
-    init(members: [User], messages: [Message]) {
+    init(chatName: String, members: [User], messages: [Message]) {
         id = UUID().uuidString
         self.members = members
         self.messages = messages
+        isGroup = members.count > 2
+        self.chatName = chatName
+        imageURL = nil
     }
 }
 
