@@ -16,8 +16,8 @@ struct Conversation: Identifiable, Codable {
 
     var messages: [Message]
 
-    var lastMessage: Date? {
-        messages.last?.timeSent
+    var lastMessage: Message? {
+        messages.last
     }
 
     var partner: User {

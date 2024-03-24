@@ -28,6 +28,8 @@ class ConversationsViewModel: ObservableObject {
                 return
             }
             print(error)
+            // Can I fetch only a certain number of messages first?
+
             documents.map { queryDocumentSnapshot -> Conversation in
                 let data = queryDocumentSnapshot.data()
             }
