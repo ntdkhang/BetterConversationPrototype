@@ -14,18 +14,21 @@ struct ConversationsListView: View {
             List {
                 ForEach(conversationsVM.conversations) { conversation in
                     NavigationLink {
-                        ChatView(conversationsVM: conversationsVM, conversation: conversation)
+                        // ChatView(conversationsVM: conversationsVM, conversation: conversation)
                     } label: {
-                        ConversationRow(partner: conversation.partner, lastMessage: conversation.lastMessage)
+                        ConversationRow(partnerId: conversation.partner, lastMessage: Message(text: conversation.chatName, sender: User.Khang))
                     }
                 }
             }
+        }
+        .onAppear {
+            conversationsVM.fetchData()
         }
     }
 }
 
 struct ConversationRow: View {
-    var partner: User
+    var partnerId: String
     var lastMessage: Message?
     var body: some View {
         HStack {
@@ -48,8 +51,12 @@ struct ConversationRow: View {
             }
         }
     }
+
+    var partner: User {
+        User.Khang
+    }
 }
 
-#Preview {
-    ConversationsListView()
-}
+// #Preview {
+//     ConversationsListView()
+// }

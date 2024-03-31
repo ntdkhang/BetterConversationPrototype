@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4203EB812B9817BE0030D8B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4203EB802B9817BE0030D8B9 /* GoogleService-Info.plist */; };
+		422C03432BB339F60015F174 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C03422BB339F60015F174 /* ConversationViewModel.swift */; };
 		4255857C2B6ED7B400B53048 /* BetterConversationPrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4255857B2B6ED7B400B53048 /* BetterConversationPrototypeApp.swift */; };
 		425585822B6ED7B700B53048 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425585812B6ED7B700B53048 /* Assets.xcassets */; };
 		425585852B6ED7B700B53048 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 425585842B6ED7B700B53048 /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		4203EB802B9817BE0030D8B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		422C03422BB339F60015F174 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		425585782B6ED7B400B53048 /* BetterConversationPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterConversationPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4255857B2B6ED7B400B53048 /* BetterConversationPrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterConversationPrototypeApp.swift; sourceTree = "<group>"; };
 		425585812B6ED7B700B53048 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				4255857B2B6ED7B400B53048 /* BetterConversationPrototypeApp.swift */,
 				426AF9DD2B8A9A3100323B9D /* Views */,
 				426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */,
+				422C03422BB339F60015F174 /* ConversationViewModel.swift */,
 				42DF5DD52B7F996F00A66282 /* User.swift */,
 				426AF9E02B8AA17200323B9D /* Conversation.swift */,
 				426AF9D92B8A392A00323B9D /* Message.swift */,
@@ -197,6 +200,7 @@
 				42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */,
 				42DF5DD62B7F996F00A66282 /* User.swift in Sources */,
 				426AF9E12B8AA17200323B9D /* Conversation.swift in Sources */,
+				422C03432BB339F60015F174 /* ConversationViewModel.swift in Sources */,
 				426AF9DA2B8A392A00323B9D /* Message.swift in Sources */,
 				426AF9DF2B8A9B0800323B9D /* ConversationsListView.swift in Sources */,
 				42DF5DD82B86439000A66282 /* ChatView.swift in Sources */,

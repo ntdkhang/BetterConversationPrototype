@@ -20,9 +20,9 @@ struct ChatView: View {
             ScrollViewReader { proxy in
                 ScrollView([.vertical]) {
                     LazyVStack {
-                        ForEach(conversation.messages) {
-                            ChatBubble(message: $0)
-                        }
+                        // ForEach(conversation.messages) {
+                        //     ChatBubble(message: $0)
+                        // }
                     }
                     .id(scrollID)
                     .onChange(of: scroll) {
@@ -41,7 +41,7 @@ struct ChatView: View {
                     isPresenting.toggle()
                 } label: {
                     HStack(alignment: .center) {
-                        Text(conversation.partner.name)
+                        Text(conversation.partner)
                             .foregroundColor(.primary)
                         Text(">")
                             .padding(.leading, -4)
@@ -51,7 +51,7 @@ struct ChatView: View {
             }
         }
         .sheet(isPresented: $isPresenting) {
-            ProfileView(user: conversation.partner)
+            ProfileView(user: .Khang)
         }
     }
 
@@ -67,7 +67,7 @@ struct ChatView: View {
                 Button {
                     withAnimation {
                         scroll.toggle()
-                        conversationsVM.sendMessage(currentText, to: $conversation)
+                        // conversationsVM.sendMessage(currentText, to: $conversation)
                         currentText = ""
                     }
                 } label: {

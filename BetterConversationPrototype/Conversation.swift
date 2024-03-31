@@ -5,45 +5,35 @@
 //  Created by Khang Nguyen on 2/24/24.
 //
 
+import FirebaseFirestoreSwift
 import Foundation
 
 struct Conversation: Identifiable, Codable {
-    public let id: String
-    public let members: [User]
+    @DocumentID var id: String?
+    public let members: [String] // list of members' id
     public let isGroup: Bool
-    public let imageURL: URL?
+    public let imageURL: String
     public let chatName: String
 
-    var messages: [Message]
-
-    var lastMessage: Message? {
-        messages.last
+    var partner: String {
+        // Returns id of partner
+        members.first { $0 != User.Khang.id } ?? ""
     }
 
-    var partner: User {
-        members.first { $0 != User.Khang } ?? .empty
-    }
-
-    mutating func sendMessage(_ text: String) {
-        messages.append(Message(text: text, sender: .Khang))
-    }
-
-    init(partner: User, messages: [Message]) {
+    init(partner: User, messages _: [Message]) {
         id = UUID().uuidString
-        members = [partner, .Khang]
-        self.messages = messages
+        members = [partner.id, User.Khang.id]
         isGroup = false
         chatName = partner.name
-        imageURL = nil
+        imageURL = ""
     }
 
-    init(chatName: String, members: [User], messages: [Message]) {
+    init(chatName: String, members: [String], messages _: [Message]) {
         id = UUID().uuidString
         self.members = members
-        self.messages = messages
         isGroup = members.count > 2
         self.chatName = chatName
-        imageURL = nil
+        imageURL = ""
     }
 }
 

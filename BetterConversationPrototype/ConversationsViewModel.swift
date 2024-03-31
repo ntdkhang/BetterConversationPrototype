@@ -10,16 +10,16 @@ import Foundation
 import SwiftUI
 
 class ConversationsViewModel: ObservableObject {
-    @Published var conversations: [Conversation] = [.withDauMoi, .withKhaBanh]
+    @Published var conversations: [Conversation] = []
     // @Published var activeConversation: Conversation?
     private var db = Firestore.firestore()
 
-    func sendMessage(_ text: String, to conversation: Binding<Conversation>) {
-        if let index = conversations.firstIndex(where: { $0.id == conversation.wrappedValue.id }) {
-            conversations[index].messages.append(Message(text: text, sender: .Khang))
-            conversation.wrappedValue.messages.append(Message(text: text, sender: .Khang))
-        }
-    }
+//    func sendMessage(_ text: String, to conversation: Binding<Conversation>) {
+//        if let index = conversations.firstIndex(where: { $0.id == conversation.wrappedValue.id }) {
+//            conversations[index].messages.append(Message(text: text, sender: .Khang))
+//            conversation.wrappedValue.messages.append(Message(text: text, sender: .Khang))
+//        }
+//    }
 
     func fetchData() {
         db.collection("conversations").addSnapshotListener { querySnapshot, error in
@@ -27,11 +27,10 @@ class ConversationsViewModel: ObservableObject {
                 print("NO DOCUMENTS")
                 return
             }
-            print(error)
-            // Can I fetch only a certain number of messages first?
 
-            documents.map { queryDocumentSnapshot -> Conversation in
-                let data = queryDocumentSnapshot.data()
+            print(error ?? "")
+            self.conversations = documents.compactMap { queryDocumentSnapshot -> Conversation? in
+                try? queryDocumentSnapshot.data(as: Conversation.self)
             }
         }
     }
