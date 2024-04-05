@@ -63,7 +63,7 @@ struct AuthenticatedView<Content, Unauthenticated>: View where Content: View, Un
       }
       .sheet(isPresented: $presentingProfileScreen) {
         NavigationView {
-          UserProfileView()
+            MenuView()
             .environmentObject(viewModel)
         }
       }

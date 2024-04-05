@@ -16,7 +16,7 @@ struct ConversationsListView: View {
                     NavigationLink {
                         // ChatView(conversationsVM: conversationsVM, conversation: conversation)
                     } label: {
-                        ConversationRow(partnerId: conversation.partner, lastMessage: Message(text: conversation.chatName, sender: User.Khang))
+                        ConversationRow(partnerId: conversation.partner, lastMessage: Message(text: conversation.chatName, sender: UserProfile.Khang))
                     }
                 }
             }
@@ -52,8 +52,8 @@ struct ConversationRow: View {
         }
     }
 
-    var partner: User {
-        User.Khang
+    var partner: UserProfile {
+        UserProfile.Khang
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
-    var user: User
+    var user: UserProfile
     var body: some View {
         VStack {
             Image(user.imageName)

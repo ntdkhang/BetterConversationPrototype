@@ -25,7 +25,7 @@
 		427467262BAA049100DB4602 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 427467252BAA049100DB4602 /* FirebaseFirestore */; };
 		427467282BAA049100DB4602 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 427467272BAA049100DB4602 /* FirebaseFirestoreSwift */; };
 		42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD12B7419ED00A66282 /* ProfileView.swift */; };
-		42DF5DD62B7F996F00A66282 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD52B7F996F00A66282 /* User.swift */; };
+		42DF5DD62B7F996F00A66282 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD52B7F996F00A66282 /* UserProfile.swift */; };
 		42DF5DD82B86439000A66282 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD72B86439000A66282 /* ChatView.swift */; };
 		42DF5DDA2B86445100A66282 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DF5DD92B86445100A66282 /* MenuView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		426AF9DE2B8A9B0800323B9D /* ConversationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListView.swift; sourceTree = "<group>"; };
 		426AF9E02B8AA17200323B9D /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		42DF5DD12B7419ED00A66282 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		42DF5DD52B7F996F00A66282 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		42DF5DD52B7F996F00A66282 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		42DF5DD72B86439000A66282 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		42DF5DD92B86445100A66282 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,7 +102,7 @@
 				426AF9DD2B8A9A3100323B9D /* Views */,
 				426AF9DB2B8A86ED00323B9D /* ConversationsViewModel.swift */,
 				422C03422BB339F60015F174 /* ConversationViewModel.swift */,
-				42DF5DD52B7F996F00A66282 /* User.swift */,
+				42DF5DD52B7F996F00A66282 /* UserProfile.swift */,
 				426AF9E02B8AA17200323B9D /* Conversation.swift */,
 				426AF9D92B8A392A00323B9D /* Message.swift */,
 				422C03462BC050E60015F174 /* Auth */,
@@ -223,7 +223,7 @@
 				42DF5DDA2B86445100A66282 /* MenuView.swift in Sources */,
 				422C034A2BC052360015F174 /* AuthenticationView.swift in Sources */,
 				42DF5DD22B7419ED00A66282 /* ProfileView.swift in Sources */,
-				42DF5DD62B7F996F00A66282 /* User.swift in Sources */,
+				42DF5DD62B7F996F00A66282 /* UserProfile.swift in Sources */,
 				426AF9E12B8AA17200323B9D /* Conversation.swift in Sources */,
 				422C03482BC052080015F174 /* AuthenticatedView.swift in Sources */,
 				422C034E2BC0528C0015F174 /* LoginView.swift in Sources */,

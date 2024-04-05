@@ -10,10 +10,10 @@ import Foundation
 struct Message: Identifiable, Codable {
     let id: String
     let text: String
-    let sender: User
+    let sender: UserProfile
     let timeSent: Date
 
-    init(text: String, sender: User) {
+    init(text: String, sender: UserProfile) {
         id = UUID().uuidString
         self.text = text
         self.sender = sender
