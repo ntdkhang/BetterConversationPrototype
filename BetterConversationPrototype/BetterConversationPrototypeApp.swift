@@ -5,6 +5,7 @@
 //  Created by Khang Nguyen on 2/3/24.
 //
 
+import FirebaseAuth
 import FirebaseCore
 import SwiftUI
 
@@ -23,8 +24,11 @@ struct BetterConversationPrototypeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MenuView()
-                .preferredColorScheme(.dark)
+            AuthenticatedView {
+                MenuView()
+            }
+            .environmentObject(AuthenticationViewModel())
+            .preferredColorScheme(.dark)
         }
     }
 }

@@ -20,6 +20,11 @@ struct MenuView: View {
                 }
         }
     }
+    
+    init() {
+        // TODO: fetch user id and create a conversations viewmodel using the uid
+        
+    }
 }
 
 #Preview {
